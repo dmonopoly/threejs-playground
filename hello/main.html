@@ -220,7 +220,7 @@ function init() {
 
 function animate() {
     requestAnimationFrame(animate);
-    render();       
+    render();
     update();
 }
 
@@ -238,6 +238,7 @@ function update() {
     stats.update();
 }
 
+// render a single frame with the scene and camera
 function render() {
     renderer.render(scene, camera);
 }

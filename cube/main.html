@@ -41,22 +41,22 @@
         var line = new THREE.Line(lineGeom, lineMaterial);
         scene.add(line);
 
-        var render = function() {
-            requestAnimationFrame(render); // pass in whatever this function is called
-
-            step();
-
-            renderer.render(scene, camera);
+        var animate = function() {
+            requestAnimationFrame(animate); // pass in whatever this function is called
+            render();
         }
 
-        var step = function() {
+        // render a single frame with the scene and camera
+        // do appropriate actions before the render
+        var render = function() {
             cube.rotation.x += .07;
             cube.rotation.y += .07;
             box.rotation.x += .07;
             box.rotation.y += .07;
+            renderer.render(scene, camera);
         }
 
-        render();
+        animate();
     </script>
 </body>
 </html>
